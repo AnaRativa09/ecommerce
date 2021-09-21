@@ -22,7 +22,7 @@ function Home() {
     <>
       <h1>
         Nuevo en Superfüds
-        <span> Ver más</span>
+        <span className="green-font"> Ver más</span>
       </h1>
       <section className="products-slider">
         {
