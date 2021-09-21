@@ -5,23 +5,22 @@ import {
 import '../styles/ProductCard.css';
 
 function ProductCard({ dataProduct }) {
-  const { sellos } = dataProduct;
+  const { sellos, title } = dataProduct;
   const [showButton, setShowButton] = useState(false);
 
   const price = dataProduct.price_real;
-  const priceWithDots = price.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1.');
-  const { title } = dataProduct;
+  const priceWithFormat = price.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1.');
   const shortTitle = title.length > 15 ? `${title.substring(0, 15)}...` : title;
 
   return (
     <>
       <Card
-        style={{ width: '15rem' }}
+        className="card-container"
         onMouseEnter={() => { setShowButton(true); }}
         onMouseLeave={() => { setShowButton(false); }}
       >
         <Card.Header className="images-container">
-          <Card.Img variant="top" src={dataProduct.image} alt={dataProduct.title} style={{ height: '150px', width: 'auto' }} />
+          <Card.Img variant="top" src={dataProduct.image} alt={dataProduct.title} className="image-product " />
 
           <div className="sellos-container">
             {
@@ -45,20 +44,27 @@ function ProductCard({ dataProduct }) {
         </Card.Header>
 
         <Card.Body>
-          <div className="text-description">
-            <Card.Text>{dataProduct.supplier}</Card.Text>
-            <Card.Text>{dataProduct.net_content}</Card.Text>
+          <div className="text-description-beetwen">
+            <Card.Text className="green-font">{dataProduct.supplier}</Card.Text>
+            <div className="net_content-container">
+              <Card.Text>{dataProduct.net_content}</Card.Text>
+            </div>
           </div>
+
           <Card.Title>{shortTitle}</Card.Title>
+
           <div className="text-description">
-            <Card.Text>{`$ ${priceWithDots}`}</Card.Text>
-            <Card.Text>{`x ${dataProduct.units_sf} unids`}</Card.Text>
+            <h4>
+              <span className="green-font">$</span>
+              {`${priceWithFormat} `}
+            </h4>
+            <span className="unids">{`x ${dataProduct.units_sf} unids`}</span>
           </div>
         </Card.Body>
 
         {
           showButton
-            ? <Button variant="primary">Agregar al carrito</Button>
+            ? <Button variant="primary" className="custom-btn">Agregar al carrito</Button>
             : null
         }
       </Card>
