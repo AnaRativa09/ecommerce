@@ -1,0 +1,28 @@
+.text-description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.images-container {
+  display: flex;
+  justify-content: space-around;
+  background-color: transparent;
+}
+
+.sellos-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/*--- Tooltip ---*/
+.tooltip-inner {
+  background-color: #0f5f70 !important;
+}
+
+.tooltip-title, .tooltip-name {
+  margin: 0;
+}
+
+.tooltip-title {
+  color: #d2a96a;
+}
