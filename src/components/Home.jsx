@@ -16,8 +16,6 @@ function Home() {
     getAllProducts();
   }, []);
 
-  console.log(products);
-
   return (
     <>
       <h1>
