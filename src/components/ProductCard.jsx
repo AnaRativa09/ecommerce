@@ -5,6 +5,7 @@ import {
 } from 'react-bootstrap';
 
 import { addToCart } from '../redux/actions/productsActions';
+import getFormatPrice from '../functions';
 
 import '../styles/ProductCard.css';
 
@@ -18,8 +19,7 @@ function ProductCard({ dataProduct }) {
   const [showButton, setShowButton] = useState(false);
 
   const { sellos, title } = dataProduct;
-  const price = dataProduct.price_real;
-  const priceWithFormat = price.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1.');
+  const priceFormat = getFormatPrice(dataProduct.price_real);
   const shortTitle = title.length > 15 ? `${title.substring(0, 15)}...` : title;
 
   return (
@@ -66,7 +66,7 @@ function ProductCard({ dataProduct }) {
           <div className="text-description">
             <h4>
               <span className="green-font">$</span>
-              {`${priceWithFormat} `}
+              {`${priceFormat} `}
             </h4>
             <span className="unids">{`x ${dataProduct.units_sf} unids`}</span>
           </div>

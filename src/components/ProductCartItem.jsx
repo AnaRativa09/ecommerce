@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Card } from 'react-bootstrap';
 
 import { removeFromCart, adjustProductQty } from '../redux/actions/productsActions';
+import getFormatPrice from '../functions';
 
 import '../styles/ProductCartItem.css';
 
@@ -18,8 +19,6 @@ function ProductCardItem({ dataProduct }) {
   }, [qtyProduct, setqtyProduct]);
 
   const { title } = dataProduct;
-  // const price = dataProduct.price_real;
-  // const priceWithFormat = price.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1.');
   const shortTitle = title.length > 15 ? `${title.substring(0, 15)}...` : title;
 
   const totalPriceQty = (qty, priceProduct) => `${parseFloat(priceProduct) * qty}`;
@@ -58,7 +57,7 @@ function ProductCardItem({ dataProduct }) {
         <td>
           <h4>
             <span className="green-font">$</span>
-            {totalPriceQty(qtyProduct, dataProduct.price_real)}
+            {getFormatPrice(totalPriceQty(qtyProduct, dataProduct.price_real))}
           </h4>
         </td>
         <td>
