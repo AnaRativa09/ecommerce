@@ -2,12 +2,22 @@ import React, { useState } from 'react';
 import {
   Card, Button, OverlayTrigger, Tooltip,
 } from 'react-bootstrap';
+
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../redux/actions/productsActions';
+
 import '../styles/ProductCard.css';
 
 function ProductCard({ dataProduct }) {
-  const { sellos, title } = dataProduct;
+  const dispatch = useDispatch();
+
+  const addProduct = (id) => {
+    dispatch(addToCart(id));
+  };
+
   const [showButton, setShowButton] = useState(false);
 
+  const { sellos, title } = dataProduct;
   const price = dataProduct.price_real;
   const priceWithFormat = price.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1.');
   const shortTitle = title.length > 15 ? `${title.substring(0, 15)}...` : title;
@@ -64,7 +74,15 @@ function ProductCard({ dataProduct }) {
 
         {
           showButton
-            ? <Button variant="primary" className="custom-btn">Agregar al carrito</Button>
+            ? (
+              <Button
+                variant="primary"
+                className="custom-btn"
+                onClick={() => { addProduct(dataProduct.id); }}
+              >
+                Agregar al carrito
+              </Button>
+            )
             : null
         }
       </Card>
