@@ -1,3 +1,4 @@
 export const GET_PRODUCTS_LIST = 'GET_PRODUCTS_LIST';
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CAR';
+export const ADJUST_PRODUCT_QTY = 'ADJUST_ITEM_QTY';

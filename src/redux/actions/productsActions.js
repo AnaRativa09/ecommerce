@@ -12,10 +12,20 @@ export const getProducts = () => async (dispatch) => {
 
 export const addToCart = (productID) => ({
   type: actionTypes.ADD_TO_CART,
-  payload: { id: productID },
+  payload: {
+    id: productID,
+  },
 });
 
 export const removeFromCart = (productID) => ({
   type: actionTypes.REMOVE_FROM_CART,
   payload: { id: productID },
+});
+
+export const adjustProductQty = (productID, qty) => ({
+  type: actionTypes.ADJUST_PRODUCT_QTY,
+  payload: {
+    id: productID,
+    qty,
+  },
 });
