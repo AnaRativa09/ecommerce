@@ -38,7 +38,11 @@ function Cart() {
         {
           productsCartState !== []
             ? productsCartState.map((product) => (
-              <ProductCartItem key={product.id} dataProduct={product} />
+              <ProductCartItem
+                key={product.id}
+                dataProduct={product}
+                dataAllProducts={productsCartState}
+              />
             ))
             : null
         }
