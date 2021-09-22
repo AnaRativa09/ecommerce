@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import {
   Card, Button, OverlayTrigger, Tooltip,
 } from 'react-bootstrap';
 
-import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/actions/productsActions';
 
 import '../styles/ProductCard.css';

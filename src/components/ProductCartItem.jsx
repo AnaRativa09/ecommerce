@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Card } from 'react-bootstrap';
 
-import { useDispatch } from 'react-redux';
 import { removeFromCart, adjustProductQty } from '../redux/actions/productsActions';
 
 import '../styles/ProductCartItem.css';
