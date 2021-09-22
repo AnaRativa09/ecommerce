@@ -7,8 +7,6 @@ import Home from './views/Home';
 import Cart from './views/Cart';
 import NotFound from './views/NotFound';
 
-import './App.css';
-
 function App() {
   return (
     <BrowserRouter>
