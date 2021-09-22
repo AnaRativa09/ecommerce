@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {
-  Navbar, Container, Form, FormControl, Modal, Button, Nav,
+  Navbar, Container, FormControl, Modal, Button, InputGroup,
 } from 'react-bootstrap';
 
 import Cart from './Cart';
@@ -35,33 +35,30 @@ function Header() {
   return (
     <>
       <Navbar collapseOnSelect expand="lg" className="navbar-bg">
-        <Container>
+        <Container className="navbar-container">
           <Link to="/">
             <img src={Logo} alt="superfuds-logo" className="logo" />
           </Link>
 
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
-              <Form className="d-flex">
-                <FormControl
-                  type="search"
-                  placeholder="Buscar marcas y productos..."
-                  className="mr-2"
-                  aria-label="Buscar marcas y productos..."
-                />
-              </Form>
 
-              <Button
-                className="custom-btn-without-bg white-font flex-row"
-                onClick={() => setshowModal(true)}
-              >
-                <i className="fas fa-shopping-cart" />
-                <p className="p-without-margin">{cartCount}</p>
-              </Button>
-            </Nav>
+          <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
+            <InputGroup className="items-container">
+              <FormControl aria-label="Amount (to the nearest dollar)" placeholder="Buscar marcas y productos..." />
+              <InputGroup.Text>
+                <i className="fas fa-search" />
+              </InputGroup.Text>
+            </InputGroup>
 
-            <div className="user-container">
+            <Button
+              className="custom-btn-without-bg white-font flex-row items-container"
+              onClick={() => setshowModal(true)}
+            >
+              <i className="fas fa-shopping-cart" />
+              <p className="p-without-margin">{cartCount}</p>
+            </Button>
+
+            <div className="user-container items-container">
               <div className="user-description">
                 <p className="bold-font white-font p-without-margin">Saiby Alimentos</p>
                 <p className="thin-font p-without-margin green-dark-font">

@@ -11,6 +11,26 @@
   margin: 0 8px;
 }
 
+.input-group {
+  width: 30vw;
+}
+
+.justify-content-end .items-container{
+  margin: 0 20px;
+}
+
+.input-group input, .input-group span {
+  border-radius: 20px;
+  background-color: white;
+  border-color: white;
+  padding: .375rem 1.9rem;
+}
+
+.input-group span {
+  color: gray;
+  
+}
+
 .user-container {
   display: flex;
   align-items: center;
