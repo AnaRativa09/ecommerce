@@ -14,6 +14,16 @@ body {
   color: #fff;
 }
 
+.bold-font {
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+.black-font {
+  font-weight: 900;
+  font-size: 1.4em;
+}
+
 .custom-btn {
 	background-color: #31bf6d;
 	border-color: #31bf6d;
