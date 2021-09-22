@@ -2,12 +2,16 @@ import axios from 'axios';
 import * as actionTypes from '../types/productsTypes';
 
 export const getProducts = () => async (dispatch) => {
-  const responseData = await axios.get('https://superfuds-assets.s3-sa-east-1.amazonaws.com/utils/product.json');
+  try {
+    const responseData = await axios.get('https://superfuds-assets.s3-sa-east-1.amazonaws.com/utils/product.json');
 
-  dispatch({
-    type: actionTypes.GET_PRODUCTS_LIST,
-    payload: responseData.data,
-  });
+    dispatch({
+      type: actionTypes.GET_PRODUCTS_LIST,
+      payload: responseData.data,
+    });
+  } catch (err) {
+    throw new Error(err);
+  }
 };
 
 export const addToCart = (productID) => ({
