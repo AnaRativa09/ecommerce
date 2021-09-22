@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Row, Col } from 'react-bootstrap';
 
-import CartItem from '../components/CartItem';
+import CartItem from './CartItem';
 import getFormatPrice from '../functions';
 import '../styles/Cart.css';
 
@@ -21,10 +21,6 @@ function Cart() {
 
   return (
     <section className="cart-section">
-      <p>
-        <i className="fas fa-chevron-left green-font" />
-        Volver a la tienda
-      </p>
       <h2>Carrito de compras</h2>
       <table className="products-cart">
         <thead>

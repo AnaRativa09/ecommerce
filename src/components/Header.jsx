@@ -2,16 +2,25 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {
-  Navbar, Container, Form, FormControl,
+  Navbar, Container, Form, FormControl, Modal, Button,
 } from 'react-bootstrap';
 
+import Cart from './Cart';
 import '../styles/Header.css';
 import Logo from '../assets/superfuds-logo.jpeg';
 
 function Header() {
-  const productsCart = useSelector((state) => state.products.cart);
-  const [cartCount, setCartCount] = useState(0);
+  const [show, setShow] = useState(false);
 
+  const productsCart = useSelector((state) => state.products.cart);
+  const [productsInCart, setProductsInCart] = useState([]);
+  useEffect(() => {
+    if (productsCart !== []) {
+      setProductsInCart(productsCart);
+    }
+  }, [productsCart]);
+
+  const [cartCount, setCartCount] = useState(0);
   useEffect(() => {
     let count = 0;
     productsCart.forEach((item) => {
@@ -40,12 +49,35 @@ function Header() {
             />
           </Form>
 
-          <Link to="/cart">
+          <Button className="me-2" onClick={() => setShow(true)}>
             <div className="cart-icon-container">
               <i className="fas fa-shopping-cart" />
               <p>{cartCount}</p>
             </div>
-          </Link>
+          </Button>
+
+          <Modal show={show} onHide={() => setShow(false)}>
+            <Modal.Header>
+              <Modal.Title>
+                <Button
+                  type="button"
+                  onClick={() => setShow(false)}
+                >
+                  <i className="fas fa-chevron-left green-font" />
+                </Button>
+                Volver a la tienda
+              </Modal.Title>
+            </Modal.Header>
+
+            <Modal.Body>
+              {
+                productsInCart.length === 0
+                  ? <p>No has agregado ningun producto al carrito</p>
+                  : <Cart />
+              }
+
+            </Modal.Body>
+          </Modal>
         </Navbar.Collapse>
       </Container>
     </Navbar>

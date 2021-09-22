@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Header from './components/Header';
 import Home from './views/Home';
-import Cart from './views/Cart';
 import NotFound from './views/NotFound';
 
 function App() {
@@ -12,7 +11,6 @@ function App() {
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/cart" component={Cart} />
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
