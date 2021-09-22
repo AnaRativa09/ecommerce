@@ -75,7 +75,18 @@ function Header() {
             <Modal.Body>
               {
                 productsInCart.length === 0
-                  ? <p>No has agregado ningun producto al carrito</p>
+                  ? (
+                    <>
+                      <p>No tienes productos en el carrito, aún...</p>
+                      <Button
+                        variant="primary"
+                        className="custom-btn"
+                        onClick={() => setshowModal(false)}
+                      >
+                        Comprar ahora
+                      </Button>
+                    </>
+                  )
                   : <Cart />
               }
 
