@@ -1,0 +1,8 @@
+.qty-item {
+  display: flex;
+  align-items: center;
+}
+
+.qty-item p{
+  margin: 0;
+}
