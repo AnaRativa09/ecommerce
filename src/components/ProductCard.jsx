@@ -36,8 +36,8 @@ function ProductCard({ dataProduct }) {
                   placement="right"
                   overlay={(
                     <Tooltip id="tooltip-sello" className="tooltip">
-                      <p className="tooltip-title">Producto</p>
-                      <p className="tooltip-name">{sello.name}</p>
+                      <p className="tooltip-title p-without-margin">Producto</p>
+                      <p className="tooltip-name p-without-margin">{sello.name}</p>
                     </Tooltip>
                   )}
                 >
@@ -56,14 +56,18 @@ function ProductCard({ dataProduct }) {
             </div>
           </div>
 
-          <Card.Title>{getShortTitle(dataProduct.title)}</Card.Title>
+          <Card.Title>
+            {getShortTitle(dataProduct.title)}
+          </Card.Title>
 
           <div className="text-description">
-            <h4>
-              <span className="green-font">$</span>
-              {`${getFormatPrice(dataProduct.price_real)} `}
-            </h4>
-            <span className="unids">{`x ${dataProduct.units_sf} unids`}</span>
+            <p>
+              <strong>
+                <span className="green-font">$</span>
+                {`${getFormatPrice(dataProduct.price_real)} `}
+              </strong>
+              <span className="unids">{`x ${dataProduct.units_sf} unids`}</span>
+            </p>
           </div>
         </Card.Body>
 

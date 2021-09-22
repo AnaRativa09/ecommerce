@@ -65,10 +65,10 @@ function ProductCardItem({ dataProduct }) {
         </Col>
 
         <Col md={2} className="qty-item">
-          <h4>
+          <h3>
             <span className="green-font">$</span>
             {getFormatPrice(getTotalPriceQty(qtyProduct, dataProduct.price_real))}
-          </h4>
+          </h3>
         </Col>
 
         <Col md={1} className="qty-item">

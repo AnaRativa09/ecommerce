@@ -50,14 +50,17 @@ function Header() {
             />
           </Form>
 
-          <Button className="custom-btn-without-bg white-font flex-row" onClick={() => setshowModal(true)}>
+          <Button
+            className="custom-btn-without-bg white-font flex-row"
+            onClick={() => setshowModal(true)}
+          >
             <i className="fas fa-shopping-cart" />
-            <p>{cartCount}</p>
+            <p className="p-without-margin">{cartCount}</p>
           </Button>
 
           <Modal show={showModal} size="lg" onHide={() => setshowModal(false)}>
             <Modal.Header>
-              <Modal.Title>
+              <Modal.Title className="text-description">
                 <Button
                   className="custom-btn-without-bg green-font"
                   type="button"
@@ -65,7 +68,7 @@ function Header() {
                 >
                   <i className="fas fa-chevron-left green-font" />
                 </Button>
-                Volver a la tienda
+                <p className="p-without-margin"> Volver a la tienda </p>
               </Modal.Title>
             </Modal.Header>
 
