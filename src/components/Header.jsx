@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {
-  Navbar, Container, Form, FormControl, Modal, Button,
+  Navbar, Container, Form, FormControl, Modal, Button, Nav,
 } from 'react-bootstrap';
 
 import Cart from './Cart';
@@ -42,22 +42,24 @@ function Header() {
 
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Form className="d-flex">
-              <FormControl
-                type="search"
-                placeholder="Buscar marcas y productos..."
-                className="mr-2"
-                aria-label="Buscar marcas y productos..."
-              />
-            </Form>
+            <Nav className="me-auto">
+              <Form className="d-flex">
+                <FormControl
+                  type="search"
+                  placeholder="Buscar marcas y productos..."
+                  className="mr-2"
+                  aria-label="Buscar marcas y productos..."
+                />
+              </Form>
 
-            <Button
-              className="custom-btn-without-bg white-font flex-row"
-              onClick={() => setshowModal(true)}
-            >
-              <i className="fas fa-shopping-cart" />
-              <p className="p-without-margin">{cartCount}</p>
-            </Button>
+              <Button
+                className="custom-btn-without-bg white-font flex-row"
+                onClick={() => setshowModal(true)}
+              >
+                <i className="fas fa-shopping-cart" />
+                <p className="p-without-margin">{cartCount}</p>
+              </Button>
+            </Nav>
 
             <div className="user-container">
               <div className="user-description">
