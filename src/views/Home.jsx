@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { getProducts } from '../redux/actions/productsActions';
 
-import ProductCard from './ProductCard';
+import ProductCard from '../components/ProductCard';
 import '../styles/Home.css';
 
 function Home() {
