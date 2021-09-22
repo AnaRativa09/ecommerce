@@ -22,7 +22,7 @@ module.exports = {
     'react/destructuring-assignment': 'off',
     'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx'] }],
     'react/jsx-props-no-spreading': 'off',
-    'linebreak-style': 'off',
-    "no-underscore-dangle": 0
+    'linebreak-style': 0,
+    "no-underscore-dangle": 'off'
   },
 };
