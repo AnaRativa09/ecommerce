@@ -1,0 +1,53 @@
+.navbar-bg {
+  background-color: #31bf6d;
+}
+
+.logo {
+  height: 30px;
+  width: auto;
+}
+
+.fa-shopping-cart, .fa-chevron-down {
+  margin: 0 8px;
+}
+
+.input-group {
+  width: 30vw;
+}
+
+.justify-content-end .items-container{
+  margin: 0 20px;
+}
+
+.input-group input, .input-group span {
+  border-radius: 20px;
+  background-color: white;
+  border-color: white;
+  padding: .375rem 1.9rem;
+}
+
+.input-group span {
+  color: gray;
+  
+}
+
+.user-container {
+  display: flex;
+  align-items: center;
+}
+
+.user-profile-photo {
+  width: 45px;
+  height: auto;
+  border-radius: 50%;
+  margin: 0 8px;
+}
+
+.user-description p  {
+  text-align: right;
+  font-size: 1.1em;
+}
+
+.user-description p:nth-child(2)  {
+  font-size: 0.8em;
+}

@@ -1,13 +1,75 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/*--- Custom ---*/
+.green-font {
+  color: #31bf6d;
+}
+
+.green-dark-font {
+  color: #17743e;
+}
+
+.white-font {
+  color: #fff;
+}
+
+.bold-font-s {
+  font-weight: 700;
+  font-size: 0.8em;
+}
+
+.bold-font {
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+.black-font {
+  font-weight: 900;
+  font-size: 1.4em;
+}
+
+.text-description {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.custom-btn {
+	background-color: #31bf6d;
+	border-color: #31bf6d;
+}
+
+.custom-btn:hover {
+  border-color: #2e9d7e;
+	background-color: #2e9d7e;
+}
+
+.custom-btn-outline {
+	border-color: #31bf6d;
+  color: #31bf6d;
+}
+
+.custom-btn-outline:hover {
+  border-color: #31bf6d;
+	background-color: #31bf6d;
+}
+
+.custom-btn-without-bg, .custom-btn-without-bg:hover {
+	border-color: transparent;
+  background-color: transparent;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.p-without-margin {
+  margin: 0;
 }

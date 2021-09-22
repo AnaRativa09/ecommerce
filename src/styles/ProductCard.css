@@ -1,0 +1,49 @@
+.card-container {
+  width: 16rem;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.118);
+  margin: 10px;
+}
+
+.unids{
+  color: gray;
+}
+
+.text-description-beetwen {
+  display: flex;
+  justify-content: space-between;
+}
+
+.images-container {
+  display: flex;
+  justify-content: space-around;
+  background-color: transparent;
+}
+
+.image-product {
+  height: 150px;
+  width: auto;
+}
+
+.sellos-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.net_content-container {
+  width: 30%;
+  border-radius: 20px;
+  background-color: #2e9d7e;
+  color: #fff;
+  text-align: center;
+  height: 20px;
+  line-height: 20px;
+}
+
+/*--- Tooltip ---*/
+.tooltip-inner {
+  background-color: #0f5f70 !important;
+}
+
+.tooltip-title {
+  color: #d2a96a;
+}

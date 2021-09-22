@@ -20,6 +20,7 @@ module.exports = {
   rules: {
     'react/prop-types': 'off',
     'react/destructuring-assignment': 'off',
-    'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx'] }]
+    'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx'] }],
+    'react/jsx-props-no-spreading': 'off'
   },
 };

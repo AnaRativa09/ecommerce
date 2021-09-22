@@ -1,0 +1,35 @@
+.row-cart-item {
+  margin: 5% 0;
+}
+
+.qty-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.qty-button {
+  border-radius: 50%;
+}
+
+.qty-button-trash {
+  border: none;
+  color: gray
+}
+
+.qty-button-trash:hover {
+  border: none;
+  background-color: transparent;
+  color: #31bf6d;
+}
+
+.btn[disabled] {
+  color: gray;
+  border-color: gray;
+}
+
+.image-product-cart {
+  height: 100px;
+  width: auto;
+  margin: 0 auto;
+}

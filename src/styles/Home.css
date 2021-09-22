@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.card-wrapper {
+  width: auto !important;
+  display: flex !important;
+  justify-content: space-around !important;
+}
+
+.card {
+  border: none;
+}
+
+.slider-content{
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.slick-arrow, .slick-arrow:hover, .slick-prev, .slick-prev:hover {
+  background-color: #31bf6d;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
