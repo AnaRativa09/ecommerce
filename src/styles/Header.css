@@ -7,6 +7,27 @@
   width: auto;
 }
 
-.fa-shopping-cart {
-  margin: 8px;
+.fa-shopping-cart, .fa-chevron-down {
+  margin: 0 8px;
+}
+
+.user-container {
+  display: flex;
+  align-items: center;
+}
+
+.user-profile-photo {
+  width: 45px;
+  height: auto;
+  border-radius: 50%;
+  margin: 0 8px;
+}
+
+.user-description p  {
+  text-align: right;
+  font-size: 1.1em;
+}
+
+.user-description p:nth-child(2)  {
+  font-size: 0.8em;
 }
