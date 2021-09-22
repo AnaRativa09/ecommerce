@@ -35,3 +35,5 @@ Construir una aplicación web que permite al usuario visualizar un listado de pr
 * React (create-react-app, react-router-dom)
 * Redux (redux, react-redux, redux-thunk, redux-devtools-extension)
 * Eslint
+* Axios
+* React-slick, slick-carousel
