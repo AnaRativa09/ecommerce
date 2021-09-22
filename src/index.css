@@ -18,6 +18,11 @@ body {
   color: #fff;
 }
 
+.bold-font-s {
+  font-weight: 700;
+  font-size: 0.8em;
+}
+
 .bold-font {
   font-weight: 700;
   font-size: 1.2em;

@@ -30,9 +30,9 @@ function Home() {
 
   return (
     <section className="container mt-5 carousel">
-      <h2 className="slider-title">
+      <h2 className="slider-title black-font">
         Nuevo en Superfüds
-        <span className="green-font"> Ver más</span>
+        <span className="green-font bold-font-s"> Ver más</span>
       </h2>
 
       <Slider {...settingsSlider}>
