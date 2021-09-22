@@ -45,11 +45,6 @@
   line-height: 20px;
 }
 
-.btn-primary.custom-btn {
-	background-color: #31bf6d;
-	border-color: #31bf6d;
-}
-
 /*--- Tooltip ---*/
 .tooltip-inner {
   background-color: #0f5f70 !important;

@@ -12,6 +12,27 @@ code {
     monospace;
 }
 
+/*--- Custom ---*/
 .green-font {
   color: #31bf6d;
+}
+
+.custom-btn {
+	background-color: #31bf6d;
+	border-color: #31bf6d;
+}
+
+.custom-btn:hover {
+  border-color: #2e9d7e;
+	background-color: #2e9d7e;
+}
+
+.custom-btn-outline {
+	border-color: #31bf6d;
+  color: #31bf6d;
+}
+
+.custom-btn-outline:hover {
+  border-color: #31bf6d;
+	background-color: #31bf6d;
 }
