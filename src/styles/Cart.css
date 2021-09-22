@@ -1,9 +1,5 @@
-.cart-section {
-  background-color: aquamarine;
-}
-
-.products.cart {
-  background-color: aliceblue;
+table {
+  width: 100%;
 }
 
 thead {

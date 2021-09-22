@@ -12,6 +12,10 @@ body {
   color: #31bf6d;
 }
 
+.white-font {
+  color: #fff;
+}
+
 .custom-btn {
 	background-color: #31bf6d;
 	border-color: #31bf6d;
@@ -30,4 +34,19 @@ body {
 .custom-btn-outline:hover {
   border-color: #31bf6d;
 	background-color: #31bf6d;
+}
+
+.custom-btn-without-bg, .custom-btn-without-bg:hover {
+	border-color: transparent;
+  background-color: transparent;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-row p {
+  margin: 0;
 }

@@ -49,17 +49,16 @@ function Header() {
             />
           </Form>
 
-          <Button className="me-2" onClick={() => setShow(true)}>
-            <div className="cart-icon-container">
-              <i className="fas fa-shopping-cart" />
-              <p>{cartCount}</p>
-            </div>
+          <Button className="custom-btn-without-bg white-font flex-row" onClick={() => setShow(true)}>
+            <i className="fas fa-shopping-cart" />
+            <p>{cartCount}</p>
           </Button>
 
-          <Modal show={show} onHide={() => setShow(false)}>
+          <Modal show={show} size="lg" onHide={() => setShow(false)}>
             <Modal.Header>
               <Modal.Title>
                 <Button
+                  className="custom-btn-without-bg green-font"
                   type="button"
                   onClick={() => setShow(false)}
                 >
