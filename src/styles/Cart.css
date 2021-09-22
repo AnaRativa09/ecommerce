@@ -1,8 +1,17 @@
 .cart-section {
-  background-color: aquamarine;
   width: 80vw;
+  background-color: aquamarine;
 }
 
 .products.cart {
   background-color: aliceblue;
+}
+
+thead {
+  width: 100%;
+  font-weight: bold;
+}
+
+.text-center {
+  text-align: center;
 }

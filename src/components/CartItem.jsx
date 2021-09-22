@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Card } from 'react-bootstrap';
+import {
+  Card, Button, Row, Col,
+} from 'react-bootstrap';
 
 import { removeFromCart, adjustProductQty } from '../redux/actions/productsActions';
 import getFormatPrice from '../functions';
 
-import '../styles/ProductCartItem.css';
+import '../styles/CartItem.css';
 
 function ProductCardItem({ dataProduct }) {
   const dispatch = useDispatch();
@@ -25,51 +27,64 @@ function ProductCardItem({ dataProduct }) {
 
   return (
     <>
-      <tr>
-        <td>
-          <Card.Img variant="top" src={dataProduct.image} alt={dataProduct.title} className="image-product" />
-        </td>
-        <td>
+      <Row className="row-cart-item">
+        <Col md={3}>
+          <Card.Img
+            variant="top"
+            src={dataProduct.image}
+            alt={dataProduct.title}
+            className="image-product-cart"
+          />
+        </Col>
+
+        <Col md={3}>
           <Card.Title>{shortTitle}</Card.Title>
           <Card.Text>
-            <span className="unids">{`x ${dataProduct.units_sf} unids`}</span>
+            <span className="unids">{`x ${dataProduct.units_sf} unids - `}</span>
             {dataProduct.net_content}
           </Card.Text>
           <Card.Text className="green-font">{dataProduct.supplier}</Card.Text>
-        </td>
-        <td className="qty-item">
-          <button
+        </Col>
+
+        <Col className="qty-item" md={3}>
+          <Button
+            variant="outline-primary"
             type="button"
-            className="qty-button"
+            className="qty-button custom-btn-outline"
             onClick={() => setqtyProduct(qtyProduct === 1 ? qtyProduct : qtyProduct - 1)}
+            disabled={qtyProduct === 1}
           >
             <i className="fas fa-minus" />
-          </button>
+          </Button>
           <p>{qtyProduct}</p>
-          <button
+          <Button
+            variant="outline-primary"
             type="button"
-            className="qty-button"
+            className="qty-button custom-btn-outline"
             onClick={() => setqtyProduct(qtyProduct + 1)}
           >
             <i className="fas fa-plus" />
-          </button>
-        </td>
-        <td>
+          </Button>
+        </Col>
+
+        <Col md={2} className="qty-item">
           <h4>
             <span className="green-font">$</span>
             {getFormatPrice(totalPriceQty(qtyProduct, dataProduct.price_real))}
           </h4>
-        </td>
-        <td>
-          <button
+        </Col>
+
+        <Col md={1} className="qty-item">
+          <Button
             type="button"
-            className="qty-button"
+            variant="outline-primary"
+            className="qty-button-trash"
             onClick={() => dispatch(removeFromCart(dataProduct.id))}
           >
             <i className="far fa-trash-alt" />
-          </button>
-        </td>
-      </tr>
+          </Button>
+        </Col>
+      </Row>
     </>
   );
 }

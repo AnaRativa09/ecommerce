@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { Row, Col } from 'react-bootstrap';
 
-import ProductCartItem from '../components/ProductCartItem';
+import CartItem from '../components/CartItem';
 import getFormatPrice from '../functions';
 import '../styles/Cart.css';
 
@@ -20,29 +21,32 @@ function Cart() {
 
   return (
     <section className="cart-section">
-      <h1>
+      <p>
         <i className="fas fa-chevron-left green-font" />
         Volver a la tienda
-      </h1>
+      </p>
+      <h2>Carrito de compras</h2>
       <table className="products-cart">
         <thead>
-          <tr>
-            <th>Item</th>
-            <th>Cantidad</th>
-            <th>Precio</th>
-          </tr>
+          <Row>
+            <Col md={6}>Item</Col>
+            <Col md={3} className="text-center">Cantidad</Col>
+            <Col md={2} className="text-center">Precio</Col>
+          </Row>
         </thead>
-        {
-          productsCartState !== []
-            ? productsCartState.map((product) => (
-              <ProductCartItem
-                key={product.id}
-                dataProduct={product}
-                dataAllProducts={productsCartState}
-              />
-            ))
-            : null
-        }
+        <tbody>
+          {
+            productsCartState !== []
+              ? productsCartState.map((product) => (
+                <CartItem
+                  key={product.id}
+                  dataProduct={product}
+                  dataAllProducts={productsCartState}
+                />
+              ))
+              : null
+          }
+        </tbody>
       </table>
       <h3>{`Total: $${totalPrice}`}</h3>
     </section>
