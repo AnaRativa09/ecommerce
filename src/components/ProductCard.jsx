@@ -5,22 +5,19 @@ import {
 } from 'react-bootstrap';
 
 import { addToCart } from '../redux/actions/productsActions';
-import getFormatPrice from '../functions';
+import { getFormatPrice, getShortTitle } from '../functions';
 
 import '../styles/ProductCard.css';
 
 function ProductCard({ dataProduct }) {
-  const dispatch = useDispatch();
-
-  const addProduct = (id) => {
-    dispatch(addToCart(id));
-  };
-
   const [showButton, setShowButton] = useState(false);
+
+  const dispatch = useDispatch();
+  const addProduct = (id) => (dispatch(addToCart(id)));
 
   const { sellos, title } = dataProduct;
   const priceFormat = getFormatPrice(dataProduct.price_real);
-  const shortTitle = title.length > 15 ? `${title.substring(0, 15)}...` : title;
+  const shortTitle = getShortTitle(title);
 
   return (
     <>

@@ -12,11 +12,14 @@ const productsReducer = (state = INITIAL_STATE, action) => {
 
     case actionTypes.ADD_TO_CART: {
       const productData = state.dataProducts.find((product) => product.id === action.payload.id);
-      const inCart = state.cart.find((productInCart) => productInCart.id === action.payload.id);
+
+      const isProductInCart = state.cart.find(
+        (productInCart) => productInCart.id === action.payload.id,
+      );
 
       return {
         ...state,
-        cart: inCart
+        cart: isProductInCart
           ? state.cart.map((productMap) => (productMap.id === action.payload.id
             ? { ...productMap, qty: productMap.qty + 1 }
             : productMap))

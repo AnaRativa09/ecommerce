@@ -10,25 +10,26 @@ import '../styles/Header.css';
 import Logo from '../assets/superfuds-logo.jpeg';
 
 function Header() {
-  const [show, setShow] = useState(false);
+  const [showModal, setshowModal] = useState(false);
 
-  const productsCart = useSelector((state) => state.products.cart);
+  const productsCartState = useSelector((state) => state.products.cart);
   const [productsInCart, setProductsInCart] = useState([]);
+
   useEffect(() => {
-    if (productsCart !== []) {
-      setProductsInCart(productsCart);
+    if (productsCartState !== []) {
+      setProductsInCart(productsCartState);
     }
-  }, [productsCart]);
+  }, [productsCartState]);
 
   const [cartCount, setCartCount] = useState(0);
+
   useEffect(() => {
     let count = 0;
-    productsCart.forEach((item) => {
+    productsCartState.forEach((item) => {
       count += item.qty;
     });
-
     setCartCount(count);
-  }, [productsCart, cartCount]);
+  }, [productsCartState, cartCount]);
 
   return (
     <Navbar collapseOnSelect expand="lg" className="navbar-bg">
@@ -49,18 +50,18 @@ function Header() {
             />
           </Form>
 
-          <Button className="custom-btn-without-bg white-font flex-row" onClick={() => setShow(true)}>
+          <Button className="custom-btn-without-bg white-font flex-row" onClick={() => setshowModal(true)}>
             <i className="fas fa-shopping-cart" />
             <p>{cartCount}</p>
           </Button>
 
-          <Modal show={show} size="lg" onHide={() => setShow(false)}>
+          <Modal show={showModal} size="lg" onHide={() => setshowModal(false)}>
             <Modal.Header>
               <Modal.Title>
                 <Button
                   className="custom-btn-without-bg green-font"
                   type="button"
-                  onClick={() => setShow(false)}
+                  onClick={() => setshowModal(false)}
                 >
                   <i className="fas fa-chevron-left green-font" />
                 </Button>

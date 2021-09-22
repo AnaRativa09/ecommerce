@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Row, Col } from 'react-bootstrap';
 
 import CartItem from './CartItem';
-import getFormatPrice from '../functions';
+import { getFormatPrice } from '../functions';
 import '../styles/Cart.css';
 
 function Cart() {
@@ -15,7 +15,6 @@ function Cart() {
     productsCartState.forEach((item) => {
       price += item.qty * item.price_real;
     });
-
     setTotalPrice(getFormatPrice(price));
   }, [productsCartState, totalPrice, setTotalPrice]);
 

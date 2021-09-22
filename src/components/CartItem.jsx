@@ -5,7 +5,7 @@ import {
 } from 'react-bootstrap';
 
 import { removeFromCart, adjustProductQty } from '../redux/actions/productsActions';
-import getFormatPrice from '../functions';
+import { getFormatPrice, getShortTitle, getTotalPriceQty } from '../functions';
 
 import '../styles/CartItem.css';
 
@@ -13,17 +13,14 @@ function ProductCardItem({ dataProduct }) {
   const dispatch = useDispatch();
   const [qtyProduct, setqtyProduct] = useState(dataProduct.qty);
 
+  const updateQty = () => dispatch(adjustProductQty(dataProduct.id, qtyProduct));
+
   useEffect(() => {
-    const updateQty = () => {
-      dispatch(adjustProductQty(dataProduct.id, qtyProduct));
-    };
     updateQty();
   }, [qtyProduct, setqtyProduct]);
 
   const { title } = dataProduct;
-  const shortTitle = title.length > 15 ? `${title.substring(0, 15)}...` : title;
-
-  const totalPriceQty = (qty, priceProduct) => `${parseFloat(priceProduct) * qty}`;
+  const shortTitle = getShortTitle(title);
 
   return (
     <>
@@ -70,7 +67,7 @@ function ProductCardItem({ dataProduct }) {
         <Col md={2} className="qty-item">
           <h4>
             <span className="green-font">$</span>
-            {getFormatPrice(totalPriceQty(qtyProduct, dataProduct.price_real))}
+            {getFormatPrice(getTotalPriceQty(qtyProduct, dataProduct.price_real))}
           </h4>
         </Col>
 
