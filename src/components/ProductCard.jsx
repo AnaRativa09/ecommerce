@@ -15,9 +15,7 @@ function ProductCard({ dataProduct }) {
   const dispatch = useDispatch();
   const addProduct = (id) => (dispatch(addToCart(id)));
 
-  const { sellos, title } = dataProduct;
-  const priceFormat = getFormatPrice(dataProduct.price_real);
-  const shortTitle = getShortTitle(title);
+  const { sellos } = dataProduct;
 
   return (
     <>
@@ -52,18 +50,18 @@ function ProductCard({ dataProduct }) {
 
         <Card.Body>
           <div className="text-description-beetwen">
-            <Card.Text className="green-font">{dataProduct.supplier}</Card.Text>
+            <Card.Text className="green-font">{getShortTitle(dataProduct.supplier)}</Card.Text>
             <div className="net_content-container">
               <Card.Text>{dataProduct.net_content}</Card.Text>
             </div>
           </div>
 
-          <Card.Title>{shortTitle}</Card.Title>
+          <Card.Title>{getShortTitle(dataProduct.title)}</Card.Title>
 
           <div className="text-description">
             <h4>
               <span className="green-font">$</span>
-              {`${priceFormat} `}
+              {`${getFormatPrice(dataProduct.price_real)} `}
             </h4>
             <span className="unids">{`x ${dataProduct.units_sf} unids`}</span>
           </div>
