@@ -31,7 +31,7 @@ function Cart() {
               <h2>Carrito de compras</h2>
             </Col>
             <Col md={2} className="text-center">
-              <p>
+              <p className="p-without-margin">
                 <span className="green-font">{`${totalProducts} `}</span>
                 items
               </p>
