@@ -50,25 +50,21 @@ function ProductCard({ dataProduct }) {
 
         <Card.Body>
           <div className="text-description-beetwen">
-            <Card.Text className="green-font">{getShortTitle(dataProduct.supplier)}</Card.Text>
+            <Card.Text className="green-font">{getShortTitle(dataProduct.supplier, 15)}</Card.Text>
             <div className="net_content-container">
               <Card.Text>{dataProduct.net_content}</Card.Text>
             </div>
           </div>
 
-          <Card.Title>
-            {getShortTitle(dataProduct.title)}
-          </Card.Title>
+          <Card.Text className="bold-font">{getShortTitle(dataProduct.title, 15)}</Card.Text>
 
-          <div className="text-description">
-            <p>
-              <strong>
-                <span className="green-font">$</span>
-                {`${getFormatPrice(dataProduct.price_real)} `}
-              </strong>
-              <span className="unids">{`x ${dataProduct.units_sf} unids`}</span>
-            </p>
-          </div>
+          <p className="p-without-margin">
+            <strong className="black-font">
+              <span className="green-font ">$</span>
+              {`${getFormatPrice(dataProduct.price_real)} `}
+            </strong>
+            <span className="unids">{`x ${dataProduct.units_sf} unids`}</span>
+          </p>
         </Card.Body>
 
         {

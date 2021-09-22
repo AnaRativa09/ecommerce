@@ -4,13 +4,7 @@
   margin: 10px;
 }
 
-.text-description {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.text-description .unids{
+.unids{
   color: gray;
 }
 
@@ -48,10 +42,6 @@
 /*--- Tooltip ---*/
 .tooltip-inner {
   background-color: #0f5f70 !important;
-}
-
-.tooltip-title, .tooltip-name {
-  margin: 0;
 }
 
 .tooltip-title {

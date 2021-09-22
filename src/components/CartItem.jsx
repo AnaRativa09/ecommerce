@@ -19,13 +19,10 @@ function ProductCardItem({ dataProduct }) {
     updateQty();
   }, [qtyProduct, setqtyProduct]);
 
-  const { title } = dataProduct;
-  const shortTitle = getShortTitle(title);
-
   return (
     <>
       <Row className="row-cart-item">
-        <Col md={3}>
+        <Col md={2}>
           <Card.Img
             variant="top"
             src={dataProduct.image}
@@ -34,13 +31,14 @@ function ProductCardItem({ dataProduct }) {
           />
         </Col>
 
-        <Col md={3}>
-          <Card.Title>{shortTitle}</Card.Title>
-          <Card.Text>
-            <span className="unids">{`x ${dataProduct.units_sf} unids - `}</span>
-            {dataProduct.net_content}
-          </Card.Text>
-          <Card.Text className="green-font">{dataProduct.supplier}</Card.Text>
+        <Col md={4} className="flex-row">
+          <div className="text-container">
+            <Card.Text className="bold-font p-without-margin">{getShortTitle(dataProduct.title, 15)}</Card.Text>
+            <Card.Text className="p-without-margin">
+              {`x ${dataProduct.units_sf} unids - ${dataProduct.net_content}`}
+            </Card.Text>
+            <Card.Text className="green-font p-without-margin">{dataProduct.supplier}</Card.Text>
+          </div>
         </Col>
 
         <Col className="qty-item" md={3}>
@@ -53,7 +51,7 @@ function ProductCardItem({ dataProduct }) {
           >
             <i className="fas fa-minus" />
           </Button>
-          <p>{qtyProduct}</p>
+          <p className="p-without-margin">{qtyProduct}</p>
           <Button
             variant="outline-primary"
             type="button"
@@ -65,10 +63,10 @@ function ProductCardItem({ dataProduct }) {
         </Col>
 
         <Col md={2} className="qty-item">
-          <h3>
+          <p className="p-without-margin black-font">
             <span className="green-font">$</span>
-            {getFormatPrice(getTotalPriceQty(qtyProduct, dataProduct.price_real))}
-          </h3>
+            {` ${getFormatPrice(getTotalPriceQty(qtyProduct, dataProduct.price_real))} `}
+          </p>
         </Col>
 
         <Col md={1} className="qty-item">

@@ -8,10 +8,6 @@
   justify-content: space-around;
 }
 
-.qty-item p{
-  margin: 0;
-}
-
 .qty-button {
   border-radius: 50%;
 }

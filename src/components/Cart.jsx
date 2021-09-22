@@ -56,8 +56,8 @@ function Cart() {
               : null
           }
         </tbody>
-        <Col md={{ offset: 8 }}>
-          <h2>{`Total: $${totalPrice}`}</h2>
+        <Col md={{ offset: 9 }}>
+          <p className="black-font">{`Total: $${totalPrice}`}</p>
         </Col>
       </table>
     </section>
