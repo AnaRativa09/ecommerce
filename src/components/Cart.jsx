@@ -9,20 +9,34 @@ import '../styles/Cart.css';
 function Cart() {
   const productsCartState = useSelector((state) => state.products.cart);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [totalProducts, setTotalProducts] = useState(0);
 
   useEffect(() => {
     let price = 0;
+    let products = 0;
     productsCartState.forEach((item) => {
       price += item.qty * item.price_real;
+      products += item.qty;
     });
     setTotalPrice(getFormatPrice(price));
-  }, [productsCartState, totalPrice, setTotalPrice]);
+    setTotalProducts(products);
+  }, [productsCartState, totalPrice, setTotalPrice, totalProducts, setTotalProducts]);
 
   return (
     <section className="cart-section">
-      <h2>Carrito de compras</h2>
       <table className="products-cart">
         <thead>
+          <Row>
+            <Col md={10}>
+              <h2>Carrito de compras</h2>
+            </Col>
+            <Col md={2} className="text-center">
+              <p>
+                <span className="green-font">{`${totalProducts} `}</span>
+                items
+              </p>
+            </Col>
+          </Row>
           <Row>
             <Col md={6}>Item</Col>
             <Col md={3} className="text-center">Cantidad</Col>
@@ -43,7 +57,7 @@ function Cart() {
           }
         </tbody>
         <Col md={{ offset: 8 }}>
-          <h3>{`Total: $${totalPrice}`}</h3>
+          <h2>{`Total: $${totalPrice}`}</h2>
         </Col>
       </table>
     </section>
