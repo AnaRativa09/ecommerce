@@ -24,6 +24,12 @@ body {
   font-size: 1.4em;
 }
 
+.text-description {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .custom-btn {
 	background-color: #31bf6d;
 	border-color: #31bf6d;
