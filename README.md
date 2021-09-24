@@ -10,22 +10,22 @@
 
 ***
 
-## 1. Descripción del proyecto 🤓
+## 1. Descripción
 
-Construir una aplicación web que permite al usuario visualizar un listado de productos en un carrousel, agregar y eliminar productos del carrito de compra.
+Aplicación web que permite al usuario visualizar un listado de productos en un carrousel, agregar y eliminar productos del carrito de compra.
 
 ## 2. Demo
 
 https://anarativa09.github.io/ecommerce/
 
-## 3. Objetivos del proyecto 🏁
+## 3. Objetivos
 
 - [x] Reutilizacion de componentes
 - [x] Uso del store
 - [x] Funcionamiento
 - [x] Estructura del codigo
 
-## 4. Instalación 🚧
+## 4. Instalación
 
 * Clonar el repositorio: ```git clone https://github.com/AnaRativa09/ecommerce.git```
 
@@ -33,7 +33,7 @@ https://anarativa09.github.io/ecommerce/
 
 * Ejecutar ```npm start``` para interactuar con la web app desde http://localhost:3000
 
-## 5. Herramientas utilizadas 💻📂
+## 5. Herramientas utilizadas
 * HTML
 * CSS, Bootstrap
 * Javascript
