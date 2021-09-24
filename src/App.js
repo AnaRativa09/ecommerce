@@ -11,6 +11,7 @@ function App() {
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/ecommerce" component={Home} />
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
