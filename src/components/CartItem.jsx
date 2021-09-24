@@ -46,7 +46,7 @@ function ProductCardItem({ dataProduct }) {
             variant="outline-primary"
             type="button"
             className="qty-button custom-btn-outline"
-            onClick={() => setqtyProduct(qtyProduct === 1 ? qtyProduct : qtyProduct - 1)}
+            onClick={() => setqtyProduct(qtyProduct - 1)}
             disabled={qtyProduct === 1}
           >
             <i className="fas fa-minus" />
