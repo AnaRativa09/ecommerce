@@ -4,9 +4,9 @@
 
 * [1. Descripción](#1-descripción)
 * [2. Demo](#2-demo)
-* [2. Objetivos](#2-objetivos)
-* [3. Instalación](#3-instalación)
-* [4. Herramientas utilizadas](#4-herramientas-utilizadas)
+* [3. Objetivos](#3-objetivos)
+* [4. Instalación](#4-instalación)
+* [5. Herramientas utilizadas](#5-herramientas-utilizadas)
 
 ***
 
