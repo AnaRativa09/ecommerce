@@ -50,7 +50,6 @@ function Cart() {
                 <CartItem
                   key={product.id}
                   dataProduct={product}
-                  dataAllProducts={productsCartState}
                 />
               ))
               : null
