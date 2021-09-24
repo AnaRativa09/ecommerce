@@ -2,11 +2,11 @@
 
 ## Índice
 
-* [1. Descripción del proyecto](#1-descripción-del-proyecto)
+* [1. Descripción](#1-descripción)
 * [2. Demo](#2-demo)
-* [2. Objetivos del proyecto](#2-objetivos-del-proyecto)
+* [2. Objetivos](#2-objetivos)
 * [3. Instalación](#3-instalación)
-* [4. Herramientas utilizadas](#4-herramientas-utilizadas-💻📂)
+* [4. Herramientas utilizadas](#4-herramientas-utilizadas)
 
 ***
 
